@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3D5FEBC-A2A7-4BC6-9422-15BE9A93D220}</ProjectGuid>
+    <ProjectGuid>{49056B65-A3BE-48E1-B47A-0B2D9CD87C3A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entidades</RootNamespace>
-    <AssemblyName>Entidades</AssemblyName>
+    <RootNamespace>DatosDB</RootNamespace>
+    <AssemblyName>DatosDB</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reserva.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{b3d5febc-a2a7-4bc6-9422-15be9a93d220}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

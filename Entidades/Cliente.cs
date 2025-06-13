@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,38 +8,37 @@ namespace Entidades
 {
     public class Cliente
     {
+        // atributos
+
+        private int IdCliente;
+        private string DNI;
         private string Nombre;
+        private string Apellido;
         private string Email;
-        private int NroHabitacion;
-        private string TipoHabitacion;
-        private DateTime Fecha;
+        private string Telefono;
 
-        private static int contadorHabitaciones = 100;
-        public Cliente()
-        { }
+        // propiedades
+        public int p_idCliente {  get; set; }
+        public string p_dni { get; set; }
+        public string p_nombre { get; set; }
+        public string p_apellido { get; set; }
+        public string p_email { get; set; }
+        public string P_telefono { get; set; }
 
-        public Cliente(string nombre, string email, string tipoHabitacion, DateTime fecha)
+        public Cliente() { }
+
+        public Cliente(int idcl, string dni, string nombre, string apellido, string email, string telefono)
         {
+            IdCliente = idcl;
+            DNI = dni;
             Nombre = nombre;
+            Apellido = apellido;
             Email = email;
-            TipoHabitacion= tipoHabitacion;
-            Fecha = fecha;
+            Telefono = telefono;
+          
         }
 
-        public string RealizarReserva()
-        {
-            if (string.IsNullOrWhiteSpace(Nombre) || string.IsNullOrWhiteSpace(Email))
-                return "Error: Nombre y Email son obligatorios.";
 
-            if (Fecha.Date < DateTime.Today)
-                return "Error: La fecha de reserva no puede ser en el pasado.";
 
-            if (string.IsNullOrWhiteSpace(TipoHabitacion))
-                return "Error: Seleccione un tipo de habitación.";
-
-            NroHabitacion = ++contadorHabitaciones;
-
-            return $"Reserva exitosa.\nHabitación asignada: {NroHabitacion}";
-        }
     }
 }
