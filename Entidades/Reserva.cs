@@ -10,6 +10,7 @@ namespace Entidades
     {
         private int IdReservas;
         private int IdCliente;
+        private int IdHabitacion;
         private DateTime FechaReserva;
         private DateTime FechaEntrada;
         private DateTime FechaSalida;
@@ -19,6 +20,7 @@ namespace Entidades
 
         public int p_idReserva {  get; set; }
         public int p_idCliente { get; set; }
+        public int p_idHabitacion { get; set; }
         public DateTime p_FechaReserva { get; set; }
         public DateTime p_FechaEntrada { get; set; }
         public DateTime p_FechaSalida { get; set; }
@@ -26,13 +28,17 @@ namespace Entidades
 
         public Reserva() { }
 
-        //public Reserva (int idReservas, int idCliente, DateTime fechaReserva, DateTime fechaEntrada, DateTime fechaSalida, string estadoReserva)
+        public Reserva (int idReservas, int idCliente,int idhabitacion, DateTime fechaReserva, DateTime fechaentrada, DateTime fechasalida, string estadoreserva)
+        {
+            IdReservas = idReservas;
+            IdCliente = idCliente;
+            IdHabitacion = idhabitacion;
+            FechaReserva = fechaReserva;
+            FechaEntrada = fechaentrada;
+            FechaSalida = fechasalida;
+            EstadoReserva = estadoreserva;
 
-
-
-
-
-
+        }
 
 
     }

@@ -23,7 +23,7 @@ namespace Entidades
         public string p_nombre { get; set; }
         public string p_apellido { get; set; }
         public string p_email { get; set; }
-        public string P_telefono { get; set; }
+        public string p_telefono { get; set; }
 
         public Cliente() { }
 
