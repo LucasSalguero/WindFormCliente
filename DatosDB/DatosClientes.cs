@@ -30,6 +30,14 @@ namespace DatosDB
                     cmd.Parameters.AddWithValue("Apellido", objCliente.p_apellido);
                     cmd.Parameters.AddWithValue("Email", objCliente.p_email);
                     cmd.Parameters.AddWithValue("Telefono", objCliente.p_telefono);
+
+                    cmd.ExecuteNonQuery();
+
+                    // Para obtener el id del cliente recien generado
+                    cmd.CommandText = "SELECT @@IDENTITY";
+                    cmd.Parameters.Clear(); //Limpiar param anteriores
+                    resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
                 }
                 else if (accion == "Modificar")
                 {
@@ -39,9 +47,19 @@ namespace DatosDB
                     cmd.Parameters.AddWithValue("Email", objCliente.p_email);
                     cmd.Parameters.AddWithValue("Telefono", objCliente.p_telefono);
                     cmd.Parameters.AddWithValue("DNI", objCliente.p_dni);
+
+                    resultado = cmd.ExecuteNonQuery();
+                }
+                else if (accion == "Baja")
+                {
+                    cmd.CommandText = "DELETE FROM Clientes WHERE id_cliente = ?";
+                    cmd.Parameters.AddWithValue("id_cliente", objCliente.p_idCliente);
+
+                    resultado = cmd.ExecuteNonQuery();
                 }
 
-                resultado = cmd.ExecuteNonQuery();
+                
+                
             }
             catch (Exception e)
             {

@@ -12,8 +12,6 @@ namespace Entidades
         private int IdCliente;
         private int IdHabitacion;
         private DateTime FechaReserva;
-        private DateTime FechaEntrada;
-        private DateTime FechaSalida;
         private string EstadoReserva;
 
         // prop
@@ -22,20 +20,16 @@ namespace Entidades
         public int p_idCliente { get; set; }
         public int p_idHabitacion { get; set; }
         public DateTime p_FechaReserva { get; set; }
-        public DateTime p_FechaEntrada { get; set; }
-        public DateTime p_FechaSalida { get; set; }
         public string p_EstadoReserva { get; set; }
 
         public Reserva() { }
 
-        public Reserva (int idReservas, int idCliente,int idhabitacion, DateTime fechaReserva, DateTime fechaentrada, DateTime fechasalida, string estadoreserva)
+        public Reserva (int idReservas, int idCliente,int idhabitacion, DateTime fechaReserva, string estadoreserva)
         {
             IdReservas = idReservas;
             IdCliente = idCliente;
             IdHabitacion = idhabitacion;
             FechaReserva = fechaReserva;
-            FechaEntrada = fechaentrada;
-            FechaSalida = fechasalida;
             EstadoReserva = estadoreserva;
 
         }

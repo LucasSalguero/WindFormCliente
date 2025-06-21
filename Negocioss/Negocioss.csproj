@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="negClientes.cs" />
+    <Compile Include="negHabitaciones.cs" />
+    <Compile Include="negReservas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
