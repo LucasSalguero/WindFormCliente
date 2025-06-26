@@ -158,8 +158,9 @@ namespace WindFormCliente
             this.dgvReservas.Name = "dgvReservas";
             this.dgvReservas.ReadOnly = true;
             this.dgvReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReservas.Size = new System.Drawing.Size(762, 348);
+            this.dgvReservas.Size = new System.Drawing.Size(819, 348);
             this.dgvReservas.TabIndex = 12;
+            this.dgvReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservas_CellContentClick);
             // 
             // lblTitulo
             // 
@@ -233,10 +234,11 @@ namespace WindFormCliente
             this.bttEliminar.TabIndex = 20;
             this.bttEliminar.Text = "ELIMINAR";
             this.bttEliminar.UseVisualStyleBackColor = true;
+            this.bttEliminar.Click += new System.EventHandler(this.bttEliminar_Click);
             // 
             // bttEditar
             // 
-            this.bttEditar.Location = new System.Drawing.Point(371, 504);
+            this.bttEditar.Location = new System.Drawing.Point(363, 504);
             this.bttEditar.Name = "bttEditar";
             this.bttEditar.Size = new System.Drawing.Size(101, 33);
             this.bttEditar.TabIndex = 21;
@@ -248,7 +250,7 @@ namespace WindFormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 608);
+            this.ClientSize = new System.Drawing.Size(1399, 608);
             this.Controls.Add(this.bttEditar);
             this.Controls.Add(this.bttEliminar);
             this.Controls.Add(this.label2);

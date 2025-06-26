@@ -41,19 +41,20 @@ namespace DatosDB
                 }
                 else if (accion == "Modificar")
                 {
-                    cmd.CommandText = "UPDATE Clientes SET Nombre = ?, Apellido = ?, Email = ?, Telefono = ? WHERE DNI = ?";
+                    cmd.CommandText = "UPDATE Clientes SET Nombre = ?, Apellido = ?, Email = ?, Telefono = ?, DNI = ? WHERE id_Clientes = ?";
                     cmd.Parameters.AddWithValue("Nombre", objCliente.p_nombre);
                     cmd.Parameters.AddWithValue("Apellido", objCliente.p_apellido);
                     cmd.Parameters.AddWithValue("Email", objCliente.p_email);
                     cmd.Parameters.AddWithValue("Telefono", objCliente.p_telefono);
                     cmd.Parameters.AddWithValue("DNI", objCliente.p_dni);
+                    cmd.Parameters.AddWithValue("id_Clientes", objCliente.p_idCliente);
 
                     resultado = cmd.ExecuteNonQuery();
                 }
                 else if (accion == "Baja")
                 {
-                    cmd.CommandText = "DELETE FROM Clientes WHERE id_cliente = ?";
-                    cmd.Parameters.AddWithValue("id_cliente", objCliente.p_idCliente);
+                    cmd.CommandText = "DELETE FROM Clientes WHERE id_clientes = ?";
+                    cmd.Parameters.AddWithValue("id_clientes", objCliente.p_idCliente);
 
                     resultado = cmd.ExecuteNonQuery();
                 }

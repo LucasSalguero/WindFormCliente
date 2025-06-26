@@ -16,11 +16,16 @@ namespace DatosDB
         {
                         
             string orden = @"SELECT 
+                        Reservas.id_Reservas,
+                        Clientes.id_Clientes,
                         Clientes.Nombre,
                         Clientes.Apellido,
                         Clientes.DNI,
+                        Clientes.Email,
+                        Clientes.Telefono,
                         Habitaciones.numero,
                         Habitaciones.tipo,
+                        Habitaciones.precio,
                         Reservas.fecha_Reserva
                        FROM 
                         ((Reservas 
@@ -70,16 +75,17 @@ namespace DatosDB
                 }
                 else if (accion == "Modificar")
                 {
-                    cmd.CommandText = "UPDATE Reservas SET id_clientes = ?, id_habitaciones = ?,WHERE fecha_reserva = ?";
+                    cmd.CommandText = "UPDATE Reservas SET id_clientes = ?, id_habitaciones = ?, fecha_reserva = ? WHERE id_Reservas = ?";
                     cmd.Parameters.AddWithValue("id_Clientes", objReservas.p_idCliente);
                     cmd.Parameters.AddWithValue("id_Habitaciones", objReservas.p_idHabitacion);
                     cmd.Parameters.AddWithValue("fecha_Reserva", objReservas.p_FechaReserva);
+                    cmd.Parameters.AddWithValue("id_Reservas", objReservas.p_idReserva);
 
                 }
                 else if (accion == "Baja")
                 {
-                    cmd.CommandText = "DELETE FROM Reservas where id_reserva = ?";
-                    cmd.Parameters.AddWithValue("id_cliente", objReservas.p_idReserva);
+                    cmd.CommandText = "DELETE FROM Reservas where id_Reservas = ?";
+                    cmd.Parameters.AddWithValue("id_Reservas", objReservas.p_idReserva);
                 }
 
                 resultado = cmd.ExecuteNonQuery();
